@@ -1,0 +1,8 @@
+# import User from "./user.graphql"
+
+type Link {
+  id: ID!
+  url: String!
+  text: String
+  user: User
+}

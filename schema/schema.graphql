@@ -1,3 +1,10 @@
+# import Link from "./entities/link.graphql"
+
 type Query {
   allWords: [String!]
+  allLinks: [Link!]!
+}
+
+type Mutation {
+  createLink(url: String!, text: String): Link
 }
