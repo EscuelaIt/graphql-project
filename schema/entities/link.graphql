@@ -6,3 +6,9 @@ type Link {
   text: String
   user: User
 }
+
+input newLink{
+  url: String!
+  text: String
+  user: Int
+}

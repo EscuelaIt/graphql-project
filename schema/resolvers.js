@@ -2,7 +2,7 @@ const links = [
   {
     id: 1,
     url: "ulr",
-    text: "bla bla bla"
+    text: "bla bla bla",
   },
   {
     id: 2,
@@ -25,14 +25,22 @@ const resolvers =  {
     allLinks: () => {
       // code
       return links;
+    },
+    getLink: (_, params) => {
+      const id = params.id;
+      // search database
+      return links[id];
     }
   },
   Mutation: {
     createLink: (_, params) => {
       const newLink = {
+        ...params.link,
         id: links.length + 1,
-        url: params.url,
-        text: params.text
+        user:{
+          id: 1,
+          name: "nicolas"
+        }
       }
       links.push(newLink);
       // insert

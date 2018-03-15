@@ -1,10 +1,11 @@
-# import Link from "./entities/link.graphql"
+# import Link, newLink from "./entities/link.graphql"
 
 type Query {
   allWords: [String!]
   allLinks: [Link!]!
+  getLink(id: Int!): Link
 }
 
 type Mutation {
-  createLink(url: String!, text: String): Link
+  createLink(link: newLink): Link
 }
